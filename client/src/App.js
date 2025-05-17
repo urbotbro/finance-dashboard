@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PieChartComponent from './PieChartComponent';
 import BarChartComponent from './BarChartComponent';
 import LineChartComponent from './LineChartComponent';
 import ManualEntryForm from './ManualEntryForm';
 import FlowChartComponent from './FlowChartComponent';
+import AreaSummary from './AreaSummary';
+import AllocationBarChart from './AllocationBarChart';
 
 function App() {
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = React.useState([]);
 
   const handleAddEntry = (entry) => {
     setEntries([...entries, entry]);
@@ -18,6 +20,8 @@ function App() {
       <PieChartComponent />
       <BarChartComponent />
       <LineChartComponent />
+      <AreaSummary />
+      <AllocationBarChart />
       <ManualEntryForm onAddEntry={handleAddEntry} />
       <FlowChartComponent entries={entries} />
     </div>
